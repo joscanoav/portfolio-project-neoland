@@ -1,0 +1,44 @@
+/* Aplica box-sizing a todos los elementos para incluir padding y border en el ancho/alto */
+* {
+  box-sizing: border-box;          /* Hace que width/height incluyan padding y border */
+}
+
+.gallery img {
+  width: 100%;                      /* La imagen ocupa el 100% del ancho de su contenedor */
+  max-width: 350px;                 /* Pero nunca será más ancha de 350px */
+  height: 300px;                    /* Altura fija de 300px para todas las imágenes */
+  object-fit: cover;                /* Corta/escala la imagen para cubrir todo el contenedor sin deformar */
+  border-radius: 10px;              /* Bordes redondeados de 10px en cada imagen */
+}
+
+body {
+  font-family: sans-serif;          /* Fuente sans-serif para todo el documento */
+  background-color: #f5f6f7;        /* Color de fondo gris claro */
+  margin: 0;                        /* Elimina el margen por defecto del body */
+}
+
+.header {
+  text-transform: uppercase;        /* Convierte el texto a MAYÚSCULAS */
+  padding: 32px;                    /* Relleno interno de 32px por cada lado */
+  background-color: #0a0a23;        /* Fondo azul muy oscuro */
+  color: #fff;                      /* Texto en blanco */
+  border-bottom: 4px solid #fdb347; /* Línea inferior de 4px color naranja */
+  text-align: center;               /* Centra el texto horizontalmente */
+}
+
+.gallery {
+  display: flex;                    /* Convierte .gallery en contenedor flex */
+  flex-direction: row;              /* Alinea los ítems en fila (horizontal) */
+  flex-wrap: wrap;                  /* Permite que los ítems salten a la siguiente línea */
+  justify-content: center;          /* Centra las imágenes horizontalmente */
+  align-items: center;              /* Centra las imágenes verticalmente dentro de cada fila */
+  padding: 20px 10px;               /* Relleno superior/inferior 20px, laterales 10px */
+  max-width: 1400px;                /* Ancho máximo del contenedor de 1400px */
+  margin: 0 auto;                   /* Centra .gallery en la página automáticamente */
+  gap: 16px;                        /* Espacio de 16px entre cada imagen */
+}
+
+.gallery::after {
+  content: "";                      /* Crea un pseudo-elemento vacío al final */
+  width: 350px;                     /* Ancho igual al max-width de .gallery img para “rellenar” la última fila */
+}

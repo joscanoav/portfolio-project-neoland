@@ -1,0 +1,126 @@
+/* Aplica a todos los elementos (*) */
+* {
+    margin: 0;                      /* Elimina márgenes por defecto */
+    padding: 0;                     /* Elimina relleno (padding) por defecto */
+    box-sizing: border-box;         /* Incluye padding y borde en el ancho/alto total */
+    font-family: 'Poppins', sans-serif; /* Define fuente base para toda la página */
+}
+
+/* Sección principal (“hero”) de la página */
+.hero {
+    width: 100%;                    /* Ocupa el 100% del ancho del contenedor */
+    min-height: 100vh;              /* Altura mínima igual a la altura de la ventana */
+    background-image: url(images/back-image.png); /* Imagen de fondo */
+    background-position: center;    /* Centra la imagen de fondo */
+    background-size: cover;         /* Cubre todo el contenedor, recortando si es necesario */
+    padding: 10px 10%;              /* Espacio interno: 10px arriba/abajo, 10% izquierda/derecha */
+    overflow: hidden;               /* Oculta cualquier contenido que sobresalga */
+    position: relative;             /* Sirve como referencia para elementos posicionados dentro */
+}
+
+/* Barra de navegación */
+nav {
+    padding: 10px 0;                /* Espacio arriba y abajo de 10px */
+    display: flex;                  /* Activa modelo flex para alinear elementos */
+    align-items: center;            /* Centra verticalmente los hijos */
+    justify-content: space-between; /* Separa los hijos al máximo a ambos extremos */
+}
+
+/* Logo dentro de la navegación */
+.logo {
+    width: 140px;                   /* Ancho fijo de 140px */
+}
+
+/* Ítems de la lista de navegación */
+nav ul li {
+    display: inline-block;          /* Muestra los <li> en línea, pero como bloques */
+    list-style: none;               /* Elimina viñetas de la lista */
+    margin: 10px 15px;              /* Márgenes alrededor de cada ítem */
+}
+
+/* Enlaces dentro de los ítems de navegación */
+nav ul li a {
+    text-decoration: none;          /* Elimina subrayado */
+    color: #333;                    /* Color de texto gris oscuro */
+    font-weight: 400;               /* Peso de fuente normal */
+}
+
+/* Botón de “login” o acción secundaria */
+.logn-btn {
+    text-decoration: none;          /* Sin subrayado */
+    color: #333;                    /* Texto gris oscuro */
+    margin-right: 15px;             /* Separación a la derecha */
+    font-weight: 400;               /* Peso de fuente normal */
+}
+
+/* Botones principales (.btn) */
+.btn {
+    display: inline-block;          /* Se comporta como bloque en línea */
+    text-decoration: none;          /* Sin subrayado */
+    padding: 14px 40px;             /* Relleno interno vertical 14px, horizontal 40px */
+    color: #fff;                    /* Texto blanco */
+    background-image: linear-gradient(45deg, #df4881, #c430d7); /* Degradado diagonal */
+    font-size: 14px;                /* Tamaño de fuente */
+    border-radius: 30px;            /* Bordes redondeados completos */
+    border-top-right-radius: 0;     /* Esquina superior derecha sin redondeo */
+    transition: 0.5s;               /* Transición suave para cambios (e.g., hover) */
+}
+
+/* Contenedor de contenido dentro de .hero */
+.content {
+    margin-top: 10%;                /* Separación superior relativa al contenedor padre */
+    max-width: 600px;               /* Ancho máximo de 600px */
+}
+
+/* Título principal dentro de .content */
+.content h1 {
+    font-size: 70px;                /* Tamaño muy grande para encabezado */
+    color: #222;                    /* Texto casi negro */
+}
+
+/* Párrafo descriptivo dentro de .content */
+.content p {
+    margin: 10px 0 30px;            /* Márgenes: 10px arriba, 0 lados, 30px abajo */
+    color: #333;                    /* Texto gris oscuro */
+    animation-delay: 0.5s;          /* Retraso de 0.5s antes de iniciar animación */
+}
+
+/* Botón dentro de .content (sobreescribe .btn) */
+.content .btn {
+    padding: 15px 80px;             /* Más relleno para destacar */
+    font-size: 16px;                /* Fuente ligeramente más grande */
+    animation-delay: 1s;            /* Retraso de 1s antes de iniciar animación */
+}
+
+/* Efecto hover sobre botones .btn */
+.btn:hover {
+    border-top-right-radius: 30px;  /* Al pasar el ratón, redondea la esquina superior derecha */
+}
+
+/* Imagen destacada dentro de .hero */
+.feature-img {
+    width: 530px;                   /* Ancho fijo de 530px */
+    position: absolute;             /* Posicionamiento absoluto respecto a .hero */
+    bottom: 0;                      /* Pegada al fondo del contenedor .hero */
+    right: 10%;                     /* Separada un 10% del borde derecho */
+}
+
+/* Variante animada de .feature-img */
+.feature-img.anim {
+    animation-delay: 1.5s;          /* Retraso de 1.5s antes de iniciar animación */
+}
+
+/* Clase genérica de animación para elementos que entran en pantalla */
+.anim {
+    opacity: 0;                     /* Empieza invisible */
+    transform: translateY(30px);    /* Desplazado 30px hacia abajo */
+    animation: moveup 0.5s linear forwards; /* Ejecuta la animación “moveup” */
+}
+
+/* Definición de la animación “moveup” */
+@keyframes moveup {
+    100% {
+        opacity: 1;                 /* Termina completamente visible */
+        transform: translateY(0px); /* Termina en su posición original */
+    }
+}
